@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+// 연결 리스트 구조체
+class Node {
+    Node* next = NULL;
+    int data;
+    void appendToTail(int d);
+public:
+    Node(int d){
+        data = d;
+    }
+
+};
+
+void Node::appendToTail(int d){
+    Node* end = new Node(d); // 새 노드 생성
+    Node* n = this; // 현재 노드를 가리키는 포인터 n 선언
+    while(n->next != NULL){ // 마지막 노드까지 이동
+        n = n->next;
+    }
+    n->next = end; // 마지막 노드의 next가 새 노드를 가리키도록 설정
+}
+
+
+int main() {
+
+}
